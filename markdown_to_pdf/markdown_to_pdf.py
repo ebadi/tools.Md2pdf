@@ -267,7 +267,7 @@ def generate_pdf_from_markdown(pdf_filepath, markdown_filepath,developer_mode):
 
     pandoc_options = ["--template", os.path.join(latex_config_dir, 'template.tex'), "--latex-engine=xelatex", 
                       "--toc", "--toc-depth=3", "--listings", "-H", latex_code_sections_config_path, 
-                      "--from", MD2PDF_INNER_FORMAT, "--filter", "md2pdf_pandoc_filter", "--number-sections", "+RTS", "-K64m", "-RTS"
+                      "--from", MD2PDF_INNER_FORMAT, "--filter", "md2pdf_pandoc_filter", "--number-sections", "+RTS", "-K128m", "-RTS"
                       "-V", 'papersize:"letterpaper"', "-V", 'fontsize:"10pt"', "-V", 'styfolder:{}'.format(latex_config_dir)]
 
     # If developer mode is on, convert temporal file to LaTeX.

@@ -12,7 +12,7 @@ RUN apt-get install pdftk -y
 
 RUN wget https://github.com/jgm/pandoc/releases/download/1.15.1/pandoc-1.15.1-1-amd64.deb && dpkg -i pandoc-1.15.1-1-amd64.deb
 
-RUN git clone https://github.com/ebadi/tools.Md2pdf.git &&  cd tools.Md2pdf && python3 setup.py install
+RUN git clone https://github.com/ebadi/tools.Md2pdf.git  &&  cd tools.Md2pdf && python3 setup.py install
 
 
 ENTRYPOINT ["markdown_to_pdf"]
