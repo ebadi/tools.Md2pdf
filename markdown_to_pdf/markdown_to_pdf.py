@@ -369,7 +369,7 @@ def generate_default_cover_file(input_conf_file, output_file):
 
 
 def convert_from_GFM(original_md, converted_md):
-     call(["pandoc", "+RTS", "-K1000000000", "-RTS", --from", "markdown_github", "--to", "markdown", "--output", converted_md, original_md])
+     call(["pandoc", "+RTS", "-K1000000000", "-RTS", "--from", "markdown_github", "--to", "markdown", "--output", converted_md, original_md])
 
 def render_pdf_cover(input_md_path, output_pdf_path):
     """ convert a MD cover to a PDF """
