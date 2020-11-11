@@ -24,7 +24,7 @@ setup(name='markdown_to_pdf',
       include_package_data=True,
       install_requires=[
         'pyyaml>=3.11',
-        'markdown>=2.6.2',
+        'markdown<=3.1',
         'pypandoc>=0.9.9',
         'pandocfilters<=1.2.4'
       ],
