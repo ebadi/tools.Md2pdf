@@ -112,11 +112,11 @@ def build_monolitic_markdown_file(monolitic_markdown_filepath, markdown_filepath
                 
                 markdown_content = fix_new_line_after_img(markdown_content)
 
-                markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format='markdown_github', filters=['md2pdf_pandoc_paragraph_filter'], extra_args=["-M2GB", "+RTS", "-K500m", "-RTS"])
+                markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format='markdown_github', filters=['md2pdf_pandoc_paragraph_filter'], extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
 
-                markdown_content = pypandoc.convert(markdown_content, 'markdown_github+all_symbols_escapable', format='markdown_github+all_symbols_escapable', extra_args=["-M2GB", "+RTS", "-K500m", "-RTS"])
+                markdown_content = pypandoc.convert(markdown_content, 'markdown_github+all_symbols_escapable', format='markdown_github+all_symbols_escapable', extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
                 
-                markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format=MD2PDF_INNER_FORMAT, extra_args=["-M2GB", "+RTS", "-K500m", "-RTS"])
+                markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format=MD2PDF_INNER_FORMAT, extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
 
                 markdown_content = fix_special_characters_inside_links(markdown_content)
    
@@ -265,7 +265,7 @@ def generate_pdf_from_markdown(pdf_filepath, markdown_filepath,developer_mode):
     latex_config_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'latex_configuration')
     latex_code_sections_config_path = os.path.join(latex_config_dir, 'code_sections.tex')
 
-    pandoc_options = ["+RTS", "-K10000000000", "-RTS", "--template", os.path.join(latex_config_dir, 'template.tex'), "--latex-engine=xelatex", 
+    pandoc_options = ["+RTS", "-K700000K", "-RTS", "--template", os.path.join(latex_config_dir, 'template.tex'), "--latex-engine=xelatex", 
                       "--toc", "--toc-depth=3", "--listings", "-H", latex_code_sections_config_path, 
                       "--from", MD2PDF_INNER_FORMAT, "--filter", "md2pdf_pandoc_filter", "--number-sections", 
                       "-V", 'papersize:"letterpaper"', "-V", 'fontsize:"10pt"', "-V", 'styfolder:{}'.format(latex_config_dir)]
@@ -369,12 +369,12 @@ def generate_default_cover_file(input_conf_file, output_file):
 
 
 def convert_from_GFM(original_md, converted_md):
-     call(["pandoc", "+RTS", "-K10000000000", "-RTS", "--from", "markdown_github", "--to", "markdown", "--output", converted_md, original_md])
+     call(["pandoc", "+RTS", "-K700000K", "-RTS", "--from", "markdown_github", "--to", "markdown", "--output", converted_md, original_md])
 
 def render_pdf_cover(input_md_path, output_pdf_path):
     """ convert a MD cover to a PDF """
 
-    call(["pandoc", "+RTS", "-K10000000000", "-RTS", "--from", "markdown", "--output", output_pdf_path, input_md_path], cwd=tempfile.gettempdir())
+    call(["pandoc", "+RTS", "-K700000K", "-RTS", "--from", "markdown", "--output", output_pdf_path, input_md_path], cwd=tempfile.gettempdir())
 
 
 def merge_cover_with_content(pdf_files_list, output_pdf):
