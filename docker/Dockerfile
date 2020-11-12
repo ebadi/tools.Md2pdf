@@ -27,4 +27,4 @@ ENTRYPOINT ["markdown_to_pdf"]
 # sudo docker build -t m2pdf-docker2 .
 # sudo docker run -v=/home/wave/carla:/md2pdf m2pdf-docker2 -i /md2pdf/mkdocs.yml -o /md2pdf/documentation.pdf
 
-sudo docker run -v=/home/infotiv/carla:/md2pdf m2pdf-docker2 -i /md2pdf/mkdocs.yml -o /md2pdf/documentation.pdf
+# sudo docker run -v=/home/infotiv/carla:/md2pdf m2pdf-docker2 -i /md2pdf/mkdocs.yml -o /md2pdf/documentation.pdf
