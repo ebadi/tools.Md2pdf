@@ -112,11 +112,11 @@ def build_monolitic_markdown_file(monolitic_markdown_filepath, markdown_filepath
                 
                 markdown_content = fix_new_line_after_img(markdown_content)
 
-                markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format='markdown_github', filters=['md2pdf_pandoc_paragraph_filter'], extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
+                #markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format='markdown_github', filters=['md2pdf_pandoc_paragraph_filter'], extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
 
-                markdown_content = pypandoc.convert(markdown_content, 'markdown_github+all_symbols_escapable', format='markdown_github+all_symbols_escapable', extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
+                #markdown_content = pypandoc.convert(markdown_content, 'markdown_github+all_symbols_escapable', format='markdown_github+all_symbols_escapable', extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
                 
-                markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format=MD2PDF_INNER_FORMAT, extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
+                #markdown_content = pypandoc.convert(markdown_content, 'markdown_github', format=MD2PDF_INNER_FORMAT, extra_args=["-M2GB", "+RTS", "-K700000K", "-RTS"])
 
                 markdown_content = fix_special_characters_inside_links(markdown_content)
    

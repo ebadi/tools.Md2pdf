@@ -16,7 +16,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python2.7 get-pip.py 
 
 RUN rm -rf tools.Md2pdf 
-RUN echo "XXXXXXXXXssXXXXXXXssX"  && git clone  https://github.com/ebadi/tools.Md2pdf.git   &&  cd tools.Md2pdf  && python2.7 setup.py install
+RUN echo "XXXXXXXXXssXXXXXXXssdsdsX"  && git clone  https://github.com/ebadi/tools.Md2pdf.git   &&  cd tools.Md2pdf  && python2.7 setup.py install
 
 
 ENTRYPOINT ["markdown_to_pdf"]
@@ -27,3 +27,4 @@ ENTRYPOINT ["markdown_to_pdf"]
 # sudo docker build -t m2pdf-docker2 .
 # sudo docker run -v=/home/wave/carla:/md2pdf m2pdf-docker2 -i /md2pdf/mkdocs.yml -o /md2pdf/documentation.pdf
 
+sudo docker run -v=/home/infotiv/carla:/md2pdf m2pdf-docker2 -i /md2pdf/mkdocs.yml -o /md2pdf/documentation.pdf
